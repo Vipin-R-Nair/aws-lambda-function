@@ -70,15 +70,15 @@ var handlers = {
 function getNewAccessToken(currentRefreshToken, self, docClient){
      // form data
      var postData = queryString.stringify({
-        client_id:'enterpriseapi-sb-yKWujZdtfayUeCwmBe2lKBna',
-        client_secret:'138d11d25f199f2e0e233cc1e80975d339cbb96c',
+        client_id:'',//insert your client id here
+        client_secret:'',//insert your client secret here
         grant_type:'refresh_token',
         refresh_token: currentRefreshToken
      });
 
      var refresh_token_post_options = {
-         host : 'api-sandbox.capitalone.com',
-         path : '/oauth/oauth20/token',
+         host : '',//enter the host that returns the auth token
+         path : '',//specify the resource path after the host url
          method: 'POST',
          headers: {
              accept: '*/*',
@@ -106,8 +106,8 @@ function getNewAccessToken(currentRefreshToken, self, docClient){
 function getRewardPoints(accessToken, self) {
         console.log('the accesToken recieved by rewards points fetch function is '+ accessToken);
         var options = {
-         host: 'api-sandbox.capitalone.com',
-         path: '/rewards/accounts/%2BjaR3Du6APE%2Bx4kQue7NB1Z6IEL1OWtPNoA4jkumi8xA%2FRv0eY0VcPYd2Kzm5jNPNcfriz1XC0LlPgonb7VWsw%3D%3D',
+         host: '',//host that contains the data
+         path: ''// resource path on hitting which we get data back,
          method: 'GET',
          headers: {
             accept: '*/*',
